@@ -1,0 +1,102 @@
+# Dependencies and package-manager caches
+node_modules/
+.npm/
+.pnpm-store/
+.yarn/cache/
+.yarn/unplugged/
+.yarn/install-state.gz
+*.tsbuildinfo
+
+# Build and test output
+dist/
+build/
+coverage/
+.nyc_output/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+/Website/qa/
+/Website/cache/
+
+# Local work, duplicate renders and downloaded Blender asset cache
+/local/
+/3D Models/assets/
+/3D Models/Renders/
+/3D Models/reports/
+
+# Blender autosaves and versioned backup files
+*.blend[0-9]*
+*.blend@
+*.blend.autosave
+
+# Python environments and generated caches
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+*.egg-info/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Environment files and credentials; keep placeholder examples
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.*.example
+.npmrc
+.pypirc
+credentials.json
+service-account*.json
+service_account*.json
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+id_rsa
+id_ed25519
+.ssh/
+.aws/
+.azure/
+.config/gcloud/
+
+# Editor and operating-system state
+.vscode/
+.idea/
+*.code-workspace
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Private records and original building assets must not be republished
+/docs/reference/
+/Website/reference/
+/Website/videos/
+/Website/assets/
+/Website/reports/
+/Website/data/navigation-*.json
+/Website/data/legacy-directory.js
+/Website/tests/obstacle-grids.json
+*.xlsx
+*.xls
+*.csv
+*.tsv
+*.mp4
+*.mov
+*.avi
+*.ipynb

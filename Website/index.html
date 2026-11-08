@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore office models with placeholder employee and department details.">
+  <title>Navigation Demo</title>
+  <link rel="stylesheet" href="src/css/navigation.css?v=bdb777cb22fe">
+  <script type="importmap">{"imports":{"three":"./vendor/three/three.module.js"}}</script>
+</head>
+<body>
+<div class="nav-shell">
+  <header class="nav-header">
+    <div class="nav-brand"><div><h1>Navigation Demo</h1><p>Office navigation</p></div></div>
+    <div class="nav-header-actions"><button id="themeToggle" aria-label="Switch to light theme">Light mode</button></div>
+  </header>
+  <div class="search-row">
+    <div class="search-box"><label for="globalSearch">Find your destination</label><input id="globalSearch" type="search" placeholder="Search a person, department or room…" autocomplete="off" aria-controls="searchResults" aria-expanded="false"><div id="searchResults" class="search-results" hidden aria-label="Search results"></div></div>
+    <div class="floor-control"><label for="floorSelect">Floor</label><select id="floorSelect"><option value="ground">Floor 1</option><option value="first" selected>Floor 2</option><option value="second">Floor 3</option></select></div>
+  </div>
+  <main class="workspace">
+    <aside class="directory" aria-label="Floor directory">
+      <div class="directory-header"><div class="eyebrow">Building</div><button id="directoryToggle" class="mobile-directory-toggle" aria-expanded="true" aria-controls="directoryList">Hide list</button><h2 id="floorTitle">Floor 2</h2><span id="directoryCount" class="directory-count"></span><div class="floor-tabs" aria-label="Choose floor"><button data-floor="ground" aria-pressed="false">1</button><button data-floor="first" aria-pressed="true">2</button><button data-floor="second" aria-pressed="false">3</button></div></div>
+      <div id="directoryList" class="directory-list"></div>
+    </aside>
+    <section class="workspace-main" aria-label="Navigation view">
+      <div id="mapCard" class="map-card">
+        <div class="map-toolbar"><div class="view-tabs" role="group" aria-label="Navigation mode"><button data-view="map" aria-pressed="true">Floor map</button><button data-view="3d" aria-pressed="false">Live 3D</button></div><div class="map-tools"><label><input type="checkbox" id="debugGraph">Route graph</label><button id="zoomOut" title="Zoom out" aria-label="Zoom out">−</button><button id="zoomIn" title="Zoom in" aria-label="Zoom in">+</button><button id="fitMap">Fit</button><button id="fullscreen" title="Fullscreen">Expand</button></div></div>
+        <div id="stage" class="map-stage">
+          <svg id="floorMap" viewBox="0 0 1400 1400" role="group" aria-label="Interactive floor map"></svg>
+          <div id="mediaContainer" class="media-container" hidden></div>
+          <div id="minimap" class="minimap" hidden aria-label="Current position on floor map"></div>
+          <div id="mapNote" class="map-note">Select a room on the map or search for a destination.</div>
+        </div>
+        <div class="status-strip" role="status" aria-live="polite"><span class="status-dot"></span><span id="statusText">Loading floor…</span></div>
+        <article id="selectionCard" class="selection-card" hidden>
+          <div><div id="selectionDept" class="eyebrow"></div><h2 id="selectionName"></h2><p id="selectionRole"></p><p id="selectionNote" class="review-note"></p><div id="routeSteps" class="route-steps"></div></div>
+          <div class="selection-actions"><button id="replayRoute">Replay route</button><button id="clearSelection">Clear</button></div>
+        </article>
+      </div>
+      <div id="employeeNotice" class="employee-notice"></div>
+    </section>
+  </main>
+</div>
+<script src="data/data.js?v=e626ae2dcb43"></script><script src="src/js/router.js?v=1ed8662c499f"></script><script src="src/js/navigation.js?v=9c6c09006c4b"></script>
+</body>
+</html>
